@@ -2,11 +2,11 @@ import React, {
   createContext,
   Fragment,
   useContext,
-  useEffect,
+  useLayoutEffect,
+  useRef,
   useState,
 } from "react"
 
-export const LanguageContext = createContext(null)
 const MESSAGES = {
   en: {
     SITE_TRANSLATION_PROMPT: "Read in English",
@@ -75,20 +75,26 @@ const MESSAGES = {
 }
 const DEFAULT_LOCALE = "en"
 const LOCALE_STORAGE_KEY = "LOCALE"
+export const LanguageContext = createContext(MESSAGES[DEFAULT_LOCALE])
 
 function getLocaleFromBrowser() {
+  const storedValue = localStorage.getItem(LOCALE_STORAGE_KEY)
+  if (storedValue) return storedValue
   const language =
-    navigator.languages !== undefined
-      ? navigator.languages[0]
-      : navigator.language
+    window.navigator.languages !== undefined
+      ? window.navigator.languages[0]
+      : window.navigator.language
   return language.slice(0, 2) || DEFAULT_LOCALE
 }
 
 export function LanguageProvider({ children = [], ...props }) {
-  const initialState =
-    localStorage.getItem(LOCALE_STORAGE_KEY) || getLocaleFromBrowser()
-  const [locale, setLocale] = useState(initialState)
-  useEffect(() => {
+  const checkedLanguagePreference = useRef(false)
+  const [locale, setLocale] = useState(null)
+  useLayoutEffect(() => {
+    if (!checkedLanguagePreference.current) {
+      setLocale(getLocaleFromBrowser())
+      checkedLanguagePreference.current = true
+    }
     localStorage.setItem(LOCALE_STORAGE_KEY, locale)
   }, [locale])
   const messageProxy = new Proxy(
@@ -101,6 +107,7 @@ export function LanguageProvider({ children = [], ...props }) {
       },
     }
   )
+  if (!locale) return <div>...</div>
   return (
     <LanguageContext.Provider {...props} value={messageProxy}>
       {children}
@@ -109,17 +116,23 @@ export function LanguageProvider({ children = [], ...props }) {
 }
 
 export function LanguageSelect({ languages = Object.keys(MESSAGES) }) {
-  const { locale, setLocale, ...messages } = useContext(LanguageContext)
+  const { locale, setLocale } = useContext(LanguageContext)
 
   return (
     <Fragment>
       {languages
         .filter(loc => loc !== locale)
-        .map((loc, i) => (
-          <button key={i} onClick={() => setLocale(loc)}>
-            {messages[loc].SITE_TRANSLATION_PROMPT}
-          </button>
-        ))}
+        .map((loc, i) => {
+          const {
+            SITE_TRANSLATION_PROMPT = MESSAGES[DEFAULT_LOCALE]
+              .SITE_TRANSLATION_PROMPT,
+          } = loc in MESSAGES ? MESSAGES[loc] : MESSAGES[DEFAULT_LOCALE]
+          return (
+            <button key={i} onClick={() => setLocale(loc)}>
+              {SITE_TRANSLATION_PROMPT}
+            </button>
+          )
+        })}
     </Fragment>
   )
 }
