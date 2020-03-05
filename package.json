@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "ncc-brochure",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A brochure/marketing site for the Neighborhood Care Center of Cornelius, NC.",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -14,18 +14,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^2.19.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "^2.19.28",
+    "gatsby-plugin-sass": "^2.1.29",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.9.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "git@github.com:SamuelDavis/ncc.git"
   }
 }
