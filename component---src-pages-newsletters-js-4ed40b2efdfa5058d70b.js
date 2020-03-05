@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"D5r+":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),r=n.n(a),l=n("yBb5"),c=n("hVlL");t.default=function(){var e=Object(a.useContext)(c.a).NEWSLETTERS.HEADER;return r.a.createElement(l.a,{className:"Newsletters"},r.a.createElement("h1",null,e),r.a.createElement("hr",null))}}}]);
+//# sourceMappingURL=component---src-pages-newsletters-js-4ed40b2efdfa5058d70b.js.map
