@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"D5r+":function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),s=t.n(a),c=t("O3ic");n.default=function(){return s.a.createElement(c.a,{className:"Newsletters"})}}}]);
+//# sourceMappingURL=component---src-pages-newsletters-js-e75ece1dd84a3bc9717f.js.map
