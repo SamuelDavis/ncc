@@ -56,16 +56,16 @@ function TopNav() {
     LanguageContext
   )
   return (
-    <nav className={"Header__TopNav"}>
+    <div className={"Header__TopNav"}>
       <Link to={HOME_HREF}>
         <img src={headerLogoSrc} alt={SITE_NAME} />
       </Link>
-      <div className={"Header__TopNav__Items"}>
+      <nav className={"Header__TopNav__Items"}>
         <ExternalLink href={DONATE_HREF}>{NAV_DONATE}</ExternalLink>
         <ExternalLink href={SIGN_IN_HREF}>{NAV_SIGN_IN}</ExternalLink>
         <Link to={NEWSLETTERS_HREF}>{NAV_NEWSLETTERS}</Link>
-      </div>
-    </nav>
+      </nav>
+    </div>
   )
 }
 

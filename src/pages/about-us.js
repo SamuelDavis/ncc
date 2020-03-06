@@ -26,7 +26,7 @@ export default function() {
       <h1>{ABOUT_HEADING}</h1>
       <section className={"AboutUs__Verses"}>
         <ol>
-          <FormattedText text={ABOUT_VERSES} type={"li"}/>
+          <FormattedText text={ABOUT_VERSES} type={"li"} />
         </ol>
         <small>{ABOUT_VERSES_CITATION}</small>
       </section>
@@ -34,23 +34,23 @@ export default function() {
         <div>
           <section>
             <h2>
-              <FlareIcon/>
+              <FlareIcon />
               {ABOUT_PROGRAMS_HEADING}
             </h2>
             <p>{ABOUT_PROGRAMS}</p>
-            <img className={"acronym"} src={acronymSrc} alt={SITE_ACRONYM}/>
+            <img className={"acronym"} src={acronymSrc} alt={SITE_ACRONYM} />
           </section>
           <section>
             <h2>
-              <FlareIcon/>
+              <FlareIcon />
               {ABOUT_ORIGIN_HEADING}
             </h2>
-            <FormattedText text={ABOUT_ORIGIN}/>
+            <FormattedText text={ABOUT_ORIGIN} />
           </section>
         </div>
         <section>
           <h2>
-            <FlareIcon/>
+            <FlareIcon />
             {ABOUT_VALUES_HEADING}
           </h2>
           <ul>
@@ -61,7 +61,7 @@ export default function() {
             ))}
           </ul>
           <Link to={PHOTO_JOURNAL_HREF}>
-            <img src={photoJournalSrc} alt={NAV_PHOTO_JOURNAL}/>
+            <img src={photoJournalSrc} alt={NAV_PHOTO_JOURNAL} />
           </Link>
         </section>
       </article>

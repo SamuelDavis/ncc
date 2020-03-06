@@ -29,8 +29,8 @@ function LanguageProvider({ children = [], ...props }) {
   useEffect(() => {
     const localLocale = window.localStorage.getItem(LOCALE_STORAGE_KEY)
     const browserLocale = (window.navigator.languages === undefined
-        ? window.navigator.language
-        : window.navigator.languages[0]
+      ? window.navigator.language
+      : window.navigator.languages[0]
     ).slice(0, 2)
     setLocale(localLocale || browserLocale || DEFAULT_LOCALE)
   }, [])

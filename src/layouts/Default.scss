@@ -2,7 +2,7 @@
 
 .Layout__Default {
   //HORIZONTAL LAYOUT
-  .Header__TopBar, .Header__TopNav, .MainNav, .Footer__Summary, .Footer__BottomBar {
+  .Header__TopBar, .Header__TopNav, .MainNav, .Footer__BottomBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,6 +61,10 @@
       margin-top: -50px;
       box-shadow: $SHADOW;
 
+      @media (max-width: 500px) {
+        height: 50px;
+      }
+
       //THICKER BORDER ON HOVER
       &:hover {
         border-width: 9px;
@@ -69,8 +73,11 @@
       }
 
       > * {
+        font-weight: bold;
+        font-size: large;
         display: block;
-        margin-top: 20%;
+        margin-top: 15%;
+        transition: margin-top 0.1s linear;
       }
     }
   }
@@ -84,19 +91,28 @@
     background-color: $COLOR_BG_TINT;
 
     .Footer__Summary {
+      display: block;
       padding: 2em;
       justify-content: space-around;
+      text-align: center;
+
       > * {
-        align-self: start;
-        flex-basis: 11%;
+        text-align: left;
+        margin: 1em;
+        display: inline-block;
+        vertical-align: top;
+        min-width: calc(150px + 2em);
 
-        &:first-child {
-          max-width: 200px;
-          max-height: 200px;
-        }
-
-        &:last-child {
-          flex-basis: 50%;
+        @media (min-width: 500px) {
+          &:nth-child(1) {
+            width: calc(33% - 2em);
+          }
+          &:nth-child(2) {
+            width: calc(33% - 2em);
+          }
+          &:nth-child(3) {
+            width: calc(33% - 2em);
+          }
         }
       }
     }

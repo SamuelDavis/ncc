@@ -4,8 +4,11 @@
     list-style-type: none;
 
     li {
+      @media (min-width: 500px) {
+        max-width: calc(33% - 1em);
+      }
+
       margin: 0.5em;
-      max-width: calc(33% - 1em);
       vertical-align: top;
       display: inline-block;
       text-align: center;
