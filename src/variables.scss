@@ -1,8 +1,9 @@
-$SPACING_DEFAULT: 1em;
+$COLOR_BG: rgb(146, 199, 138);
+$COLOR_BG_LIGHT: rgb(218, 231, 173);
+$COLOR_BG_TINT: rgba(217, 230, 172, 0.21);
+$SHADOW: rgba(23, 23, 23, 0.33) 0 0.883774px 18.8136px 0;
 
-$BG_HIGHLIGHT: rgb(146, 199, 138);
-$BG_TINT: rgb(218, 231, 173);
-
-$FONT_SIZE: 16px;
-$FONT_COLOR: rgb(88, 72, 62);
-$FONT_WEIGHT: 600;
+@mixin hCenter {
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}

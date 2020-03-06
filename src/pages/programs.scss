@@ -1,0 +1,22 @@
+@import "../variables";
+.Programs {
+  .Programs__ProgramList {
+    list-style-type: none;
+
+    li {
+      margin: 0.5em;
+      max-width: calc(33% - 1em);
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+
+      h2 {
+        color: $COLOR_BG;
+      }
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+}

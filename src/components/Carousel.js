@@ -1,39 +1,30 @@
-import React, { useEffect, useState } from "react"
-import "./Carousel.css"
+import React, { useRef } from "react"
+import "./Carousel.scss"
+import { useWindowEvent } from "../hooks"
 
 const carouselRequire = require.context(
-  "../../static/images/carousel",
+  "../images/carousel",
   false,
   /.*\.jpe?g$/
 )
-let CAROUSEL_IMAGES = []
-carouselRequire.keys().forEach(function(key) {
-  CAROUSEL_IMAGES.push(carouselRequire(key))
-})
+const CAROUSEL_IMAGES = carouselRequire.keys().map(key => carouselRequire(key))
 
-export default function Carousel({ transitionSpeed = 5000 }) {
-  const [visibleIndex, setVisibleIndex] = useState(
-    Math.floor(Math.random() * CAROUSEL_IMAGES.length)
+export function Carousel() {
+  const carouselRef = useRef(null)
+  useWindowEvent(
+    "resize",
+    () => {
+      if (carouselRef.current)
+        carouselRef.current.style.height = window.getComputedStyle(
+          carouselRef.current.firstChild
+        ).height
+    },
+    [carouselRef]
   )
-  useEffect(() => {
-    const carouselInterval = window.setInterval(
-      () =>
-        setVisibleIndex(
-          (visibleIndex + 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length
-        ),
-      transitionSpeed
-    )
-    return () => clearInterval(carouselInterval)
-  }, [visibleIndex, transitionSpeed])
   return (
-    <div className="Carousel">
+    <div className={"Carousel"} ref={carouselRef}>
       {CAROUSEL_IMAGES.map((src, i) => (
-        <img
-          className={i === visibleIndex ? "active" : null}
-          key={i}
-          src={src}
-          alt={`carousel ${i + 1}`}
-        />
+        <img key={i} src={src} alt={i} />
       ))}
     </div>
   )

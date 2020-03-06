@@ -1,41 +1,49 @@
-.AboutUs__SubHeader > * {
-  display: inline;
-}
+@import "../variables";
 
-.AboutUs__Verses {
-  margin: 0;
-  padding: 0;
-  counter-reset: verses;
-
-  &:before, &:after {
-    content: '"';
+.AboutUs {
+  h1 {
+    text-align: center;
   }
 
-  > * {
-    counter-increment: verses;
-    display: inline-block;
-    list-style-position: inside;
-
-    &:before {
-      content: counter(verses);
-      vertical-align: super;
+  .AboutUs__Verses {
+    text-align: center;
+    * {
+      display: inline-block;
     }
 
-    &:last-child {
-      text-align: right;
+    ol {
+      counter-reset: verses-counter;
+      &:before, &:after {
+        content: '"';
+      }
+
+      li:before {
+        counter-increment: verses-counter;
+        content: counter(verses-counter);
+        vertical-align: super;
+      }
     }
   }
-}
 
-.AboutUs__VersesCitation {
-  vertical-align: sub;
-}
+  article {
+    display: flex;
+    flex-wrap: wrap;
 
-.AboutUs__Programs > img {
-  margin-left: 50%;
-  transform: translate(-50%, 0);
-}
+    .acronym {
+      width: auto;
+      @include hCenter;
+    }
 
-.sidebar ul {
-  list-style-type: none;
+    > * {
+      flex: 1 1;
+
+      &:first-child {
+        flex-basis: 50%;
+      }
+
+      &:last-child {
+        margin-left: 5%;
+      }
+    }
+  }
 }
