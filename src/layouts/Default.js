@@ -8,6 +8,7 @@ import { ExternalLink, FormattedText } from "../components"
 import {
   ABOUT_HREF,
   ADDRESS,
+  CALENDAR_HREF,
   DONATE_HREF,
   EMAIL,
   FACEBOOK_HREF,
@@ -15,7 +16,6 @@ import {
   INSTAGRAM_HREF,
   NEWSLETTERS_HREF,
   PROGRAMS_HREF,
-  CALENDAR_HREF,
   SIGN_IN_HREF,
   TEL,
   VOLUNTEER_HREF,
@@ -84,7 +84,7 @@ function MainNavItem({ href, text, style = {}, ...props }) {
       style={{ backgroundImage: `url(${mainNavSrc})`, ...style }}
       {...props}
     >
-      <span>{text}</span>
+      <h2>{text}</h2>
     </Link>
   )
 }

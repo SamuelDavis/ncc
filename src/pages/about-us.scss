@@ -1,10 +1,6 @@
 @import "../variables";
 
 .AboutUs {
-  h1 {
-    text-align: center;
-  }
-
   .AboutUs__Verses {
     text-align: center;
     * {
@@ -26,7 +22,7 @@
   }
 
   article {
-    display: flex;
+    //display: flex;
     flex-wrap: wrap;
 
     .acronym {

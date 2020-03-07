@@ -2,7 +2,7 @@
 
 .Layout__Default {
   //HORIZONTAL LAYOUT
-  .Header__TopBar, .Header__TopNav, .MainNav, .Footer__BottomBar {
+  .Header__TopBar, .Header__TopNav, .MainNav, .Footer__Summary, .Footer__BottomBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,11 +12,20 @@
     }
   }
 
-  //SPACE TOP NAV
-  .Header__TopNav__Items {
-    flex-basis: 50%;
-    display: flex;
-    justify-content: space-evenly;
+  //SCALE HEADER/FOOTER LOGOS
+  .Header__TopNav, .Footer__Summary {
+    > *:first-child {
+      width: 100px;
+    }
+  }
+
+  .Header__TopNav {
+    text-align: center;
+
+    //SPACE TOP NAV
+    .Header__TopNav__Items {
+      justify-content: space-evenly;
+    }
   }
 
   //STYLE BARS
@@ -42,42 +51,43 @@
   //MAIN NAV SPACING
   .MainNav {
     z-index: 1;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    position: relative;
     justify-content: space-evenly;
+
+    @media (min-width: $BREAK_MOBILE) {
+      margin-top: -50px;
+    }
 
     //ROUND NAV ITEMS, OVERLAP
     .MainNav__Item {
-      background-color: white;
-      border-radius: 50%;
-      background-position: center;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      width: 150px;
-      height: 150px;
+      margin: 0;
       text-align: center;
       border: 3px solid $COLOR_BG_LIGHT;
-      transition: border 0.1s linear,
-      width 0.1s linear,
-      height 0.1s linear;
-      margin-top: -50px;
-      box-shadow: $SHADOW;
+      transition: border 0.1s linear;
+      background-color: white;
+      background-position: center;
+      background-size: 80%;
+      background-repeat: no-repeat;
+      white-space: nowrap;
+      border-radius: 100%;
+      max-width: 200px;
+      max-height: 200px;
 
-      @media (max-width: 500px) {
-        height: 50px;
+      @media (min-width: $BREAK_MOBILE) {
+        width: 20vw;
+        height: 20vw;
+        flex-direction: row;
+      }
+
+      > * {
+        padding: 0.5em;
       }
 
       //THICKER BORDER ON HOVER
       &:hover {
         border-width: 9px;
-        width: 132px;
-        height: 132px;
-      }
-
-      > * {
-        font-weight: bold;
-        font-size: large;
-        display: block;
-        margin-top: 15%;
-        transition: margin-top 0.1s linear;
       }
     }
   }
@@ -97,23 +107,10 @@
       text-align: center;
 
       > * {
+        max-width: 50%;
         text-align: left;
         margin: 1em;
-        display: inline-block;
         vertical-align: top;
-        min-width: calc(150px + 2em);
-
-        @media (min-width: 500px) {
-          &:nth-child(1) {
-            width: calc(33% - 2em);
-          }
-          &:nth-child(2) {
-            width: calc(33% - 2em);
-          }
-          &:nth-child(3) {
-            width: calc(33% - 2em);
-          }
-        }
       }
     }
   }

@@ -4,7 +4,7 @@
     list-style-type: none;
 
     li {
-      @media (min-width: 500px) {
+      @media (min-width: $BREAK_MOBILE) {
         max-width: calc(33% - 1em);
       }
 
