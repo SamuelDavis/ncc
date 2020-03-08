@@ -3,6 +3,7 @@ import Default from "../layouts/Default"
 import LanguageContext from "../contexts/Language"
 import { FlareIcon } from "../components"
 import "./index.scss"
+import Calendar from "../components/Calendar"
 
 export default function() {
   const {
@@ -39,6 +40,7 @@ export default function() {
           <FlareIcon />
           {SITE_NAME} - {MONTH} {WORD_CALENDAR}
         </h2>
+        <Calendar agenda={true} />
       </section>
     </Default>
   )
