@@ -10,46 +10,45 @@ html,body {
   font-family: 'Raleway', Helvetica, Arial, Lucida, sans-serif;
   margin: 0;
   padding: 0;
-}
 
-a {
-  text-decoration: none;
-}
-
-img:not(.icon) {
-  width: 100%;
-}
-
-button {
-  outline: none;
-  padding: 0.5em;
-  border-radius: 5px;
-  border-width: 3px;
-  border-color: $COLOR_BG_LIGHT;
-  cursor: pointer;
-  transition: background-color 0.1s linear;
-
-  &:hover {
-    background-color: $COLOR_BG_TINT;
+  a {
+    text-decoration: none;
   }
-}
+
+  img:not(.icon) {
+    width: 100%;
+  }
+
+  button {
+    outline: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: $COLOR_BG_LIGHT;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+
+    &:hover {
+      background-color: $COLOR_BG_TINT;
+    }
+  }
 
 
-h1, h2, h3, h4, h5, hr, p, li {
-  margin-bottom: 1em;
-}
+  h1, h2, h3, h4, h5, hr, p, li, section {
+    margin-bottom: 1em;
+  }
 
-h1 {
-  text-align: center;
-}
+  section {
+    padding: 1em;
+  }
 
+  ul, ol {
+    list-style-position: inside;
+  }
 
-ul, ol {
-  list-style-position: inside;
-}
-
-nav > * {
-  white-space: nowrap;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  nav > * {
+    white-space: nowrap;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
 }

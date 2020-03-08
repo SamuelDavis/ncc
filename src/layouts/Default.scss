@@ -96,6 +96,10 @@
   }
 
   .Main {
+    h1, h2 {
+      color: $COLOR_BG;
+      text-align: center;
+    }
     padding: 2% 10%;
   }
 
@@ -104,6 +108,7 @@
     background-color: $COLOR_BG_TINT;
 
     .Footer__Summary {
+      justify-content: space-evenly;
       flex-wrap: wrap;
       align-items: start;
 

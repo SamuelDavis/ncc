@@ -2,11 +2,24 @@ export const DEFAULT_LOCALE = "en"
 
 export default {
   en: {
+    MONTH_0: "January",
+    MONTH_1: "February",
+    MONTH_2: "March",
+    MONTH_4: "April",
+    MONTH_5: "May",
+    MONTH_6: "June",
+    MONTH_7: "July",
+    MONTH_8: "August",
+    MONTH_9: "September",
+    MONTH_10: "October",
+    MONTH_11: "November",
+    MONTH_12: "December",
     SITE_TRANSLATION_PROMPT: "Read in English",
     SITE_NAME: "Neighborhood C.A.R.E. Center",
     SITE_MOTTO: "Meeting people where they are...",
     SITE_ACRONYM:
       "C: Connect people in need to community resources and volunteers to community partners. A: Advance people with life skill and recovery programs. R: Reduce pressures on single parents and families in distress. E: Equip the next generation for success.",
+    WORD_CALENDAR: "Calendar",
     NAV_HOME: "Home",
     NAV_DONATE: "Donate",
     NAV_SIGN_IN: "Volunteer Sign-In",
@@ -22,12 +35,14 @@ export default {
     FOOTER_MISSION:
       "Meeting people where they are and helping them become what God created them to be.\nVisit the Neighborhood Care Center to use our computers or WiFi for job applications & resumes. Center Hours are Mon/Wed 10:00am - 4pm & Sat 10:00am - 1pm",
     FOOTER_TAG: "Designed by the Neighborhood C.A.R.E. Center",
-    HOME_HEADING: "Welcome to the Neighborhood C.A.R.E. Center",
+    HOME_HEADING: "Welcome",
+    HOME_SUB_HEADING: "to the Neighborhood C.A.R.E. Center",
     HOME_MISSION_HEADING: "Mission",
     HOME_MISSION:
       "To enrich the quality of life in our community by providing programs and resources that may not be otherwise available, while demonstrating the love of Christ to all people.",
     HOME_NOTE:
       "Please scroll down to learn about the programs and special events for the month of March. Feel free to contact us if you have any questions. We are here to partner with you.",
+    HOME_EVENTS_HEADING: "Neighborhood C.A.R.E. Center - March Calendar",
     ABOUT_HEADING:
       "Meeting people where they are and helping them become what God has created them to be.",
     ABOUT_VERSES:
