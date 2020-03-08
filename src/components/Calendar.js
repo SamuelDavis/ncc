@@ -5,6 +5,7 @@ const PARAMS = {
   src: "alterimaging.com_3jd86apa8fqp1cu605o60apvbs@group.calendar.google.com",
   ctz: "America/New_York",
   title: "Neighborhood C.A.R.E. Center",
+  showTitle: 0,
   showPrint: 0,
   showTabs: 0,
   showCalendars: 0,
