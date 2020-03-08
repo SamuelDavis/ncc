@@ -14,6 +14,10 @@
 
   //SCALE HEADER/FOOTER LOGOS
   .Header__TopNav, .Footer__Summary {
+    @media (max-width: $BREAK_MOBILE) {
+      justify-content: space-evenly;
+    }
+    flex-wrap: wrap;
     > *:first-child {
       width: 100px;
     }
@@ -62,7 +66,6 @@
 
     //ROUND NAV ITEMS, OVERLAP
     .MainNav__Item {
-      margin: 0;
       text-align: center;
       border: 3px solid $COLOR_BG_LIGHT;
       transition: border 0.1s linear;
@@ -101,16 +104,15 @@
     background-color: $COLOR_BG_TINT;
 
     .Footer__Summary {
-      display: block;
-      padding: 2em;
-      justify-content: space-around;
-      text-align: center;
+      flex-wrap: wrap;
+      align-items: start;
 
       > * {
-        max-width: 50%;
-        text-align: left;
         margin: 1em;
-        vertical-align: top;
+
+        @media (min-width: $BREAK_MOBILE) {
+          max-width: 50%;
+        }
       }
     }
   }

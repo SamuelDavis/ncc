@@ -43,10 +43,7 @@ function TopBar() {
           <FaInstagram />
         </ExternalLink>
       </nav>
-      <div>
-        <LanguageSelect />
         <span>{SITE_MOTTO}</span>
-      </div>
     </div>
   )
 }
@@ -60,6 +57,7 @@ function TopNav() {
       <Link to={HOME_HREF}>
         <img src={headerLogoSrc} alt={SITE_NAME} />
       </Link>
+      <LanguageSelect />
       <nav className={"Header__TopNav__Items"}>
         <ExternalLink href={DONATE_HREF}>{NAV_DONATE}</ExternalLink>
         <ExternalLink href={SIGN_IN_HREF}>{NAV_SIGN_IN}</ExternalLink>
