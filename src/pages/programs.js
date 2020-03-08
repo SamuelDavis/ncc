@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { CALENDAR_HREF, PROGRAMS } from "../data"
 import "./programs.scss"
 import { FormattedText } from "../components"
+import Calendar from "../components/Calendar"
 
 function ProgramItem({ name, desc, icon, ...props }) {
   return (
@@ -41,6 +42,7 @@ export default function() {
         <h2>{PROGRAMS_UPCOMING_HEADING}</h2>
         <hr />
         <Link to={CALENDAR_HREF}>
+          <Calendar agenda={true} />
           <button>{PROGRAMS_CALENDAR_NAV}</button>
         </Link>
       </section>
