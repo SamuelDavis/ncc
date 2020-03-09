@@ -24,7 +24,11 @@
   }
 
   .Header__TopNav {
+    padding: 1em;
     text-align: center;
+    img {
+      min-width: 200px;
+    }
 
     //SPACE TOP NAV
     .Header__TopNav__Items {
@@ -35,7 +39,7 @@
   //STYLE BARS
   .Header__TopBar, .Footer__BottomBar {
     background-color: $COLOR_BG;
-    padding: 0.5em;
+    padding: 1em;
   }
 
   .Header__TopBar button {

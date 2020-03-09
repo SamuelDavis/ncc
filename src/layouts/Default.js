@@ -43,7 +43,7 @@ function TopBar() {
           <FaInstagram />
         </ExternalLink>
       </nav>
-      <span>{SITE_MOTTO}</span>
+      <strong>{SITE_MOTTO}</strong>
     </div>
   )
 }
