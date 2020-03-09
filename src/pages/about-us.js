@@ -2,16 +2,15 @@ import React, { useContext } from "react"
 import Default from "../layouts/Default"
 import LanguageContext from "../contexts/Language"
 import "./about-us.scss"
-import { PHOTO_JOURNAL_HREF, VALUES } from "../data"
+import { INSTAGRAM_EMBED_HREF, VALUES } from "../data"
 import acronymSrc from "../images/acronym.png"
-import photoJournalSrc from "../images/photo_journal.jpg"
 import { FlareIcon, FormattedText } from "../components"
-import { Link } from "gatsby"
+import InstagramEmbed from "react-instagram-embed"
+import { FaSadCry, FaSpinner } from "react-icons/all"
 
 export default function() {
   const {
     SITE_ACRONYM,
-    NAV_PHOTO_JOURNAL,
     ABOUT_HEADING,
     ABOUT_VERSES,
     ABOUT_VERSES_CITATION,
@@ -20,6 +19,7 @@ export default function() {
     ABOUT_ORIGIN_HEADING,
     ABOUT_ORIGIN,
     ABOUT_VALUES_HEADING,
+    ABOUT_PHOTO_JOURNAL,
   } = useContext(LanguageContext)
   return (
     <Default className={"AboutUs"}>
@@ -60,9 +60,17 @@ export default function() {
               </li>
             ))}
           </ul>
-          <Link to={PHOTO_JOURNAL_HREF}>
-            <img src={photoJournalSrc} alt={NAV_PHOTO_JOURNAL} />
-          </Link>
+          <section className={"AboutUs__PhotoJournal"}>
+            <p>{ABOUT_PHOTO_JOURNAL}</p>
+            <InstagramEmbed
+              url={INSTAGRAM_EMBED_HREF}
+              containerTagName="div"
+              protocol=""
+              injectScript
+              onLoading={() => <FaSpinner />}
+              onFailure={() => <FaSadCry />}
+            />
+          </section>
         </section>
       </article>
     </Default>

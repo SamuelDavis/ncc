@@ -22,5 +22,6 @@ export const PROGRAMS_HREF = "/programs"
 export const CALENDAR_HREF = "/calendar"
 export const VOLUNTEER_HREF = "/volunteer"
 export const PHOTO_JOURNAL_HREF = "/photo-journal"
+export const INSTAGRAM_EMBED_HREF = "https://instagr.am/p/BVLJ1qolPPv/"
 
 export { TRANSLATIONS, DEFAULT_LOCALE, PROGRAMS, VALUES }

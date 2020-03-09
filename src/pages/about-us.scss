@@ -22,8 +22,21 @@
   }
 
   article {
-    //display: flex;
+    display: flex;
     flex-wrap: wrap;
+
+    @media (min-width: $BREAK_MOBILE) {
+      > * {
+        &:first-child {
+          width: 75%;
+        }
+
+        &:last-child {
+          width: 25%;
+          min-width: 300px;
+        }
+      }
+    }
 
     .acronym {
       width: auto;
@@ -40,6 +53,11 @@
       &:last-child {
         margin-left: 5%;
       }
+    }
+
+    .AboutUs__PhotoJournal {
+      width: 100%;
+      text-align: center;
     }
   }
 }

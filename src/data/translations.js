@@ -54,6 +54,8 @@ export default {
     ABOUT_ORIGIN_HEADING: "Our Origin & Vision",
     ABOUT_ORIGIN:
       'The Neighborhood C.A.R.E. Center is a response to the invitation of the Holy Spirit for The Church to embed ourselves in the local community. John 1:14, "The Word became flesh and blood, and moved into the neighborhood."\nIn 2014, a compassion ministry team from Grace Covenant Church interviewed community leaders and residents to identify practical programs that would lead to individual betterment and spiritual transformation. The Neighborhood C.A.R.E. Center began operating in November, 2016 and is now connecting those who want to help neighbors with those neighbors who want help improving their lives.',
+    ABOUT_PHOTO_JOURNAL:
+      "Stay connected with the happenings at the Neighborhood Care Center by following our Photo Journal on Instagram.",
     ABOUT_VALUES_HEADING: "Core Values",
     PROGRAMS_PROGRAMS_HEADING: "Our Programs",
     PROGRAMS_UPCOMING_HEADING: "Upcoming Programs At the C.A.R.E Center",
